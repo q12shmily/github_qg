@@ -1,0 +1,35 @@
+#修改端口
+server:
+  context-path: /add
+  port: 6677
+  jsp-servlet:
+    init-parameters:
+      development: true
+      #配置数据源相关
+spring:
+  datasource:
+    password: root
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/qqq
+    type: com.alibaba.druid.pool.DruidDataSource
+    #视图
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+      #乱码
+  http:
+    encoding:
+      charset: UTF-8
+      force: false
+      #文件上传
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 1000MB
+  profiles:
+    active: test
+    #起别名和找到mapper文件的位置
+mybatis:
+  type-aliases-package: com.baizhi.entity
+  mapper-locations: com/baizhi/mapper/*.xml

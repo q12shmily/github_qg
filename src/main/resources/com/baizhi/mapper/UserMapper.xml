@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.UserDao">
+    <insert id="save">
+        insert into q_user values(#{id},#{name},#{username},#{password},#{sex})
+    </insert>
+
+    <select id="queryItem" resultType="User">
+        select id,name,username,password,sex from q_user where username=#{username} and password=#{password}
+    </select>
+</mapper>
